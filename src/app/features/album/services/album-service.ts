@@ -8,7 +8,7 @@ import { Album } from '../../../shared/models/album.interface';
 })
 export class AlbumService {
   constructor(private http: HttpClient) {}
-  baseUrl = 'http://localhost:3000'
+  baseUrl :string = 'http://localhost:3000'
 
   getArtistAlbums(artistId : string) : Observable<Album[]>{
     return this.http.get<Album[]>(`${this.baseUrl}/${artistId}/albums`);
