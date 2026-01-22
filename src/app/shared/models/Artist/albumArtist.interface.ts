@@ -1,4 +1,4 @@
-export interface GenreInt {
+export interface AlbumArtist {
   id: number
   name: string
   picture: string
@@ -6,5 +6,6 @@ export interface GenreInt {
   picture_medium: string
   picture_big: string
   picture_xl: string
+  tracklist: string
   type: string
 }

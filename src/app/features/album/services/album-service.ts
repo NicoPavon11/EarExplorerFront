@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Album } from '../../../shared/models/album.interface';
+import { Album, AlbumComplete } from '../../../shared/models/Album/album.interface';
+import { chartAlbumResponse } from '../../../shared/models/chartAlbumResponse.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,11 +16,11 @@ export class AlbumService {
   }
 
   ///Hacer el backend de album je
-  getAlbum(albumId : string) : Observable<Album>{
-    return this.http.get<Album>(`${this.baseUrl}/album/${albumId}`)
+  getAlbum(albumId : string) : Observable<AlbumComplete>{
+    return this.http.get<AlbumComplete>(`${this.baseUrl}/album/${albumId}`)
   }
 
-  getChartAlbums(): Observable<Album[]>{
-    return this.http.get<Album[]>(`${this.baseUrl}/chart/albums`);
+  getChartAlbums(): Observable<chartAlbumResponse>{
+    return this.http.get<chartAlbumResponse>(`${this.baseUrl}/chart/albums`);
   }
 }

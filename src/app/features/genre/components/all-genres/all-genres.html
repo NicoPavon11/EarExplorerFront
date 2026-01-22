@@ -1,0 +1,12 @@
+<h1>jejejejej</h1>
+<div class="dib">
+   @if (gen$ | async; as genres) {
+  @for (genre of genres; track genre) {
+    <p>{{ genre.name }}</p>
+  }
+} @else {
+  <p>Cargando...</p>
+}
+
+</div>
+

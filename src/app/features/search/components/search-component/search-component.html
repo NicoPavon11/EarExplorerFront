@@ -1,0 +1,19 @@
+@for (item of results?.data; track item.id) {
+
+  @if (item.type === 'track') {
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.artist.name }}</p>
+  }
+
+  @if (item.type === 'artist') {
+    <h3>{{ item.name }}</h3>
+    
+  }
+
+  @if (item.type === 'album') {
+    <h3>{{ item.title }}</h3>
+    <img [src]="item.cover_medium">
+  }
+
+}
+

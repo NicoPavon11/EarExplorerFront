@@ -1,5 +1,6 @@
-import { Album } from "./album.interface"
-import { Artist } from "./artist.interface"
+import { Album } from "../Album/album.interface"
+import { Artist } from "../Artist/artist.interface"
+import { ArtistContributor} from "../Artist/artistContributor.interface"
 
 export interface Track {
   id: number
@@ -22,7 +23,7 @@ export interface Track {
   bpm: number
   gain: number
   available_countries: string[]
-  contributors: Artist[]
+  contributors: ArtistContributor[]
   md5_image: string
   track_token: string
   artist: Artist

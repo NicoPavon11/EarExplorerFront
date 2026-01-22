@@ -1,0 +1,37 @@
+
+<div class="div">
+    <h1>Charttt de tracksssssss</h1>
+    @for (track of chartTrackResponse?.data; track $index) {
+<div>
+    <p>{{ track.position }} - {{ track.title }} - {{track.artist.name}}</p>
+  </div>
+
+}
+</div>
+
+<div class="div">
+    <h1>Ahora vamos con los albums</h1>
+
+     @for (album of chartAlbumResponse?.data; track $index) {
+    <div>
+        <p>{{ album.position }}-{{album.title}}</p>
+    </div>
+
+    } 
+
+</div>
+
+
+<div class="div">
+    <h1>Por ultimo artistas</h1>
+
+     @for (artist of chartArtistResponse?.data; track $index) {
+    <div>
+        <p>{{ artist.position }}-{{artist.name}}</p>
+        
+    </div>
+    } 
+
+</div>
+
+

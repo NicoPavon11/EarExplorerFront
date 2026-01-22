@@ -1,0 +1,22 @@
+@if (radio$ | async; as rad) {
+  <p>{{ rad.title }}</p>
+
+  @if (radioTracks$ | async; as tracks) {
+
+    @for (track of tracks.data; track $index) {
+      <p>{{ track.title }} - {{track.artist.name}}</p>
+      <audio controls>
+      <source [src]="track.preview" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+    }
+  } @else {
+    <p>No hay tracks en esta radio</p>
+  }
+
+} 
+
+ @else {
+  <p>Cargando radio...</p>
+}
+

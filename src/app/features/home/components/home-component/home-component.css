@@ -1,0 +1,10 @@
+.mainContainer{
+    background-color: beige;
+    height: 700px;
+}
+
+.genres{
+    display: flex;
+    flex-wrap: wrap;
+    
+}

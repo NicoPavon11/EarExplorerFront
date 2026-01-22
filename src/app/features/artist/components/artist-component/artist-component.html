@@ -1,0 +1,35 @@
+
+
+<section>
+  <h1>Página de artista</h1>
+
+  <p>{{ artista?.name }}</p>
+  <p>{{ artista?.id }}</p>
+  <p>{{ artista?.link }}</p>
+  <p>{{ artista?.nb_album }}</p>
+  <p>{{ artista?.nb_fan }}</p>
+  <p>{{ artista?.radio }}</p>
+  <p>{{ artista?.share }}</p>
+  <p>{{ artista?.tracklist }}</p>
+  <p>{{ artista?.type }}</p>
+
+  <img [src]="artista?.picture_xl" alt="">
+
+
+  <h2>fata cancion</h2>
+
+  @if (tracks$ | async; as tracks) {
+    @for (track of tracks; track $index) {
+    <p>{{ track.title }}</p>
+    <audio controls>
+      <source [src]="track.preview" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  }
+} @else {
+  <p>Cargando...</p>
+}
+
+  
+</section>
+

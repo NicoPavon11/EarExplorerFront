@@ -1,0 +1,60 @@
+<section class="mainContainer">
+  <!-- <p>home-component works!</p>
+  <form (ngSubmit)="onSearch()">
+    <input type="text" [(ngModel)]="searchTerm" name="search" placeholder="Buscar música..." />
+  </form> -->
+  <!-- <p>{{ random }}</p> -->
+  <div class="title"><H1>EAR EXPLORER</H1></div>
+  <div class="carrousel">
+    <div class="carrouselTitle">
+      <h4>Recomendaciones semanales</h4>
+    </div>
+    @if (random === 1) {
+      <h1>artist</h1>
+
+      @if (chartArtistResponse$ | async; as artist) {
+        <ul>
+          @for (item of artist.data; track $index) {
+            <li>
+              <h6>{{ item.name }}</h6>
+            </li>
+          }
+        </ul>
+      }
+    } @else if (random === 2) {
+      <h1>albums</h1>
+      @if (chartAlbumResponse$ | async; as albums) {
+        <ul>
+          @for (item of albums.data; track $index) {
+            <li>
+              <h6>{{ item.title }}</h6>
+            </li>
+          }
+        </ul>
+      }
+    } @else {
+      <h1>tracks</h1>
+      @if (chartTrackResponse$ | async; as tracks) {
+        <ul>
+          @for (item of tracks.data; track $index) {
+            <li>
+              <h6>{{ item.title }}</h6>
+            </li>
+          }
+        </ul>
+      }
+    }
+  </div>
+  <div class="genres">
+    <div class="genretitle"><h4>genres</h4></div>
+    <div class="genres">
+      @if (gen$ | async ; as genres) {
+        @for (item of genres; track $index) {
+          <div class="card">
+            {{item.name}} - {{item.id}}
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>

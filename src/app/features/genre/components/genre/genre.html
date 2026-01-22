@@ -1,0 +1,17 @@
+<!-- <div>
+  @if (gen$ | async; as genre) {
+  <div>
+    <p>
+      {{ genre.name }}
+    </p>
+  </div>
+  }@else {
+  <p>Cargando</p>
+  }
+</div> -->
+@if (gen$ | async; as genre) {
+  <p>{{ genre.name }}</p>
+  <p>{{ genre.id }}</p>
+} @else {
+  <p>Cargando</p>
+}
